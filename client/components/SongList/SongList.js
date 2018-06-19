@@ -12,7 +12,11 @@ class SongList extends Component {
 			  ))
 			: null;
 		if (this.props.data.loading) {
-			return <i>Loading...</i>;
+			return (
+				<div>
+					<i>Loading...</i>
+				</div>
+			);
 		}
 		return (
 			<section className="container">
