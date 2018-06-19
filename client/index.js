@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
-// Components
-import SongList from './components/SongList/SongList';
-import AddSong from './components/AddSong/AddSong';
+import App from './components/App';
 
 const client = new ApolloClient({
 	uri: 'http://localhost:4000/graphql'
@@ -16,10 +14,7 @@ const Root = () => {
 	return (
 		<ApolloProvider client={client}>
 			<HashRouter>
-				<Switch>
-					<Route path="/" exact component={SongList} />
-					<Route path="/add-song" component={AddSong} />
-				</Switch>
+				<App />
 			</HashRouter>
 		</ApolloProvider>
 	);
