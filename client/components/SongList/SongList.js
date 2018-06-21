@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import { Link } from 'react-router-dom';
 
 class SongList extends Component {
 	render() {
@@ -22,6 +23,9 @@ class SongList extends Component {
 			<section className="container">
 				<h1>SongList</h1>
 				<ul className="collection">{songItems}</ul>
+				<Link to="/add-song" className="btn-floating btn-large red right">
+					<i className="material-icons">add</i>
+				</Link>
 			</section>
 		);
 	}
