@@ -40,7 +40,7 @@ class SongList extends Component {
 		}
 		return (
 			<section className="container">
-				<h1>SongList</h1>
+				<h1>Song List</h1>
 				<ul className="collection">{songItems}</ul>
 				<Link to="/add-song" className="btn-floating btn-large red right">
 					<i className="material-icons">add</i>
