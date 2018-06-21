@@ -20,7 +20,7 @@ class SongList extends Component {
 		const songItems = this.props.data.songs
 			? this.props.data.songs.map(m => (
 					<li key={m.id} className="collection-item">
-						{m.title}
+						<Link to={`/details/${m.id}`}>{m.title}</Link>
 						<i
 							className="material-icons right"
 							style={{ cursor: 'pointer', color: 'red' }}
