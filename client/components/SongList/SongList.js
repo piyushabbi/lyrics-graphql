@@ -41,7 +41,11 @@ class SongList extends Component {
 		return (
 			<section className="container">
 				<h1>Song List</h1>
-				<ul className="collection">{songItems}</ul>
+
+				{this.props.data.songs.length ? (
+					<ul className="collection">{songItems}</ul>
+				) : null}
+
 				<Link to="/add-song" className="btn-floating btn-large red right">
 					<i className="material-icons">add</i>
 				</Link>
