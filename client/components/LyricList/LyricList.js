@@ -3,10 +3,18 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 class LyricList extends Component {
-	likeLyric(id) {
+	likeLyric(id, likes) {
 		this.props.mutate({
 			variables: {
 				id
+			},
+			optimisticResponse: {
+				__typename: 'Mutation',
+				likeLyric: {
+					id,
+					__typename: 'LyricType',
+					likes: likes + 1
+				}
 			}
 		});
 	}
@@ -20,7 +28,7 @@ class LyricList extends Component {
 					<i
 						style={{ color: 'royalblue', cursor: 'pointer' }}
 						className="material-icons right"
-						onClick={() => this.likeLyric(lyric.id)}
+						onClick={() => this.likeLyric(lyric.id, lyric.likes)}
 					>
 						thumb_up
 					</i>
@@ -30,7 +38,9 @@ class LyricList extends Component {
 			<React.Fragment>
 				{this.props.lyrics.length ? (
 					<React.Fragment>
-						<h3>Lyrics</h3>
+						<h3>
+							<i>Lyrics</i>
+						</h3>
 						<ul className="collection">{list}</ul>
 					</React.Fragment>
 				) : null}
