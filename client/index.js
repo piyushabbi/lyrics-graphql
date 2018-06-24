@@ -7,7 +7,8 @@ import { HashRouter } from 'react-router-dom';
 import App from './components/App';
 
 const client = new ApolloClient({
-	uri: 'http://localhost:4000/graphql'
+	uri: 'http://localhost:4000/graphql',
+	dataIdFromObject: o => o.id
 });
 
 const Root = () => {

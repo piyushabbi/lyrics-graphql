@@ -11,7 +11,7 @@ class LyricList extends Component {
 			));
 		return (
 			<React.Fragment>
-				{this.props.lyrics ? (
+				{this.props.lyrics.length ? (
 					<React.Fragment>
 						<h3>Lyrics</h3>
 						<ul className="collection">{list}</ul>
