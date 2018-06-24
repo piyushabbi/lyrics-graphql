@@ -28,6 +28,7 @@ class LyricCreate extends Component {
 				<label>Add a Lyrics</label>
 				<input
 					type="text"
+					value={this.state.content}
 					onChange={e => this.setState({ content: e.target.value })}
 				/>
 			</form>
